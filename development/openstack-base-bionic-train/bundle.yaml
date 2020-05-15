@@ -10,6 +10,8 @@ variables:
 machines:
   '0':
     constraints: tags=d05-3
+    # scobee
+    #constraints: tags=d06,certified,model-taishan2280v2,hi1620-certified
     series: bionic
   '1':
     # kreiken
@@ -20,7 +22,8 @@ machines:
     constraints: tags=model-x6000
     series: bionic
   '3':
-    constraints: tags=d05-4
+    # segers
+    constraints: tags=d06,certified,model-x6000
     series: bionic
 relations:
 - - nova-compute:amqp
