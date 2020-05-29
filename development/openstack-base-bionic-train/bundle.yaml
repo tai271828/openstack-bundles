@@ -1,7 +1,7 @@
 variables:
   openstack-origin:    &openstack-origin     cloud:bionic-train
   # d05-3
-  data-port:           &data-port            br-ex:enahisic2i1
+  data-port:           &data-port            br-ex:enp3s0
   worker-multiplier:   &worker-multiplier    0.25
   osd-devices:         &osd-devices          /dev/sdb /dev/vdb
   expected-osd-count:  &expected-osd-count   3
@@ -9,18 +9,16 @@ variables:
   mysql-connections:   &mysql-connections    1000
 machines:
   '0':
-    constraints: tags=d05-3
+    constraints: tags=openstack-dataport,OB-07
     series: bionic
   '1':
-    # kreiken
-    constraints: tags=d06,certified,model-taishan2280v2
+    constraints: tags=openstack,OB-06
     series: bionic
   '2':
-    # saenger
-    constraints: tags=model-x6000
+    constraints: tags=openstack,OB-09
     series: bionic
   '3':
-    constraints: tags=d05-4
+    constraints: tags=openstack,OB-08
     series: bionic
 relations:
 - - nova-compute:amqp
