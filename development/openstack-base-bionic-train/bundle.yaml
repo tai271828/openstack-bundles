@@ -12,15 +12,15 @@ machines:
     constraints: tags=segers
     series: bionic
   '1':
-    constraints: tags=scobee
+    # kreiken
+    constraints: tags=d06,certified,model-taishan2280v2,kreiken
     series: bionic
   '2':
     # saenger
     constraints: tags=model-x6000,saenger
     series: bionic
   '3':
-    # kreiken
-    constraints: tags=d06,certified,model-taishan2280v2,kreiken
+    constraints: tags=d05-4
     series: bionic
 relations:
 - - nova-compute:amqp
